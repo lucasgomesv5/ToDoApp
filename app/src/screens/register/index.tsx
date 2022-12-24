@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert } from "react-native";
 import Button from "../../components/button/button-index";
 import { ButtonWrapper } from "../../components/button/button-style";
@@ -10,13 +10,14 @@ import Text from "../../components/text/text-index";
 
 import firebase from '../../services/firebase/connection';
 
-export default function Login(){
-    const navigation = useNavigation<any>();
+export default function Register(){
+    const navigation = useNavigation();
+    const [name, setName] = useState();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleLogin(){
-        const user = firebase.auth().signInWithEmailAndPassword(email, password)
+    function handleRegister(){
+        const user = firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user)=>{
             console.log(user.user)
         })
@@ -27,17 +28,26 @@ export default function Login(){
         })
     }
 
-    function handleRegisterScreen(){
-        navigation.navigate('Register')
+    function handleBack(){
+        navigation.goBack()
     }
+
+    useEffect(()=>{
+        console.log(email, 'oi')
+    },[])
     return(
         <Container>
-            <Text size={30} bold center>Bem Vindo(a)</Text>
+            <Text size={30} bold center>Cadastrar</Text>
             <ContentModal marginTop={40}>
+                {/* <TextIput 
+                label 
+                placeholder="Meu Nome Completo"
+                onChangeText={(data: any) => setName(data)}>Nome Completo
+                </TextIput> */}
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"
-                onChangeText={(data: any) => setEmail(data)}>Email
+                onChangeText={(text: any) => setEmail(text)}>Email
                 </TextIput>
                 <TextIput 
                 label 
@@ -47,12 +57,12 @@ export default function Login(){
                 <ButtonWrapper marginTop={20}>
                    <Button 
                    primary
-                   onPress={handleLogin}>Entrar</Button>
+                   onPress={handleRegister}>Criar conta</Button>
                 </ButtonWrapper>
                 <ButtonWrapper marginTop={3}>
                    <Button 
                    transparent
-                   onPress={handleRegisterScreen}>Criar uma conta</Button>
+                   onPress={handleBack}>Voltar</Button>
                 </ButtonWrapper>
                 
             </ContentModal>

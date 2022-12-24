@@ -4,8 +4,9 @@ import * as Styled from './text-input-style';
 export interface TextInputProps{
     children?: ReactNode;
     label?: boolean;
-    onChangeText?: any;
+    onChangeText?: (arg: any) => void;
     placeholder?: string;
+    password?: boolean;
 }
 
 export default function TextIput(props: TextInputProps){
@@ -14,7 +15,7 @@ export default function TextIput(props: TextInputProps){
           {props.label &&(
             <Styled.StyledLabel>{props.children}</Styled.StyledLabel>
           )}
-            <Styled.StyledTextInput placeholder={props.placeholder}/>
+            <Styled.StyledTextInput onChangeText={props.onChangeText} secureTextEntry={props.password} placeholder={props.placeholder}/>
         </Styled.StyledContainer>
     )
 }
