@@ -1,4 +1,4 @@
-import { colors } from "../../../theme";
+import { colors } from "../../theme";
 import styled from "styled-components/native";
 import { ButtonProps, ButtonWrapperProps } from "./button-index";
 
@@ -9,6 +9,8 @@ export const StyledButton = styled.TouchableOpacity<ButtonProps>`
     align-self: center;
     align-items: center;
     padding: 8px;
+
+    ${({transparent}) => transparent && 'background-color: transparent'}
 `;
 
 export const StyledButtonText = styled.Text`

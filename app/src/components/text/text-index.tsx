@@ -7,6 +7,7 @@ export interface TextProps{
     bold?: boolean;
     mini?: boolean;
     marginTop?: boolean;
+    center?: boolean;
 }
 
 export default function Text(props: TextProps){

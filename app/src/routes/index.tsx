@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "../screens/home";
+import Login from "../screens/login";
 
 
 
@@ -11,6 +12,13 @@ export default function Routes(){
           <Stack.Screen
             name="Home"
             component={Home}
+            options={{
+                headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
             options={{
                 headerShown: false,
             }}

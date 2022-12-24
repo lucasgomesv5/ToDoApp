@@ -5,6 +5,7 @@ export interface ButtonProps{
     children?: ReactNode;
     onPress?: () => void;
     primary?: boolean;
+    transparent?: boolean;
 }
 
 export interface ButtonWrapperProps{
