@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Alert } from "react-native";
 import Button from "../../components/button/button-index";
 import { ButtonWrapper } from "../../components/button/button-style";
@@ -31,7 +31,7 @@ export default function Register(){
 
     return(
         <Container>
-            <Text size={30} bold center>Cadastrar</Text>
+            <Text size={'30px'} bold center>Cadastrar</Text>
             <ContentModal marginTop={40}>
                 <TextIput 
                 label 
