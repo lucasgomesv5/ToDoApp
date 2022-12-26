@@ -1,36 +1,12 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React, {useContext} from "react";
+import AuthContext from "../contexts/auth";
+import AuthRoute from "./auth";
 
-import Home from "../screens/home";
-import Login from "../screens/login";
-import Register from "../screens/register";
+import RegisterRoute from "./register";
 
-
-
-export default function MainRoute(){
-    const Stack = createNativeStackNavigator();
-    return(
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{
-                headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{
-                headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="Register"
-            component={Register}
-            options={{
-                headerShown: false,
-            }}
-          />
-        </Stack.Navigator>
-    )
+export default function Routes(){
+  const {signed} = useContext(AuthContext)
+  return(
+    signed ? <AuthRoute/> : <RegisterRoute/>
+  )
 }

@@ -11,39 +11,28 @@ import Text from "../../components/text/text-index";
 import firebase from '../../services/firebase/connection';
 
 export default function Register(){
-    const navigation = useNavigation();
-    const [name, setName] = useState();
+    const navigation = useNavigation<any>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleRegister(){
-        const user = firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((user)=>{
-            console.log(user.user)
-        })
-        .catch((error)=>{
+    async function handleRegister(){
+        try{
+          await firebase.auth().createUserWithEmailAndPassword(email, password);
+          Alert.alert('Usuário criado com sucesso', 'Por favor, faça login para ter acesso.');
+          navigation.navigate('Login');
+        }catch(error){
             console.log(error)
-            Alert.alert('Deu ruim')
-            return;
-        })
-    }
+        };
+    };
 
     function handleBack(){
         navigation.goBack()
-    }
+    };
 
-    useEffect(()=>{
-        console.log(email, 'oi')
-    },[])
     return(
         <Container>
             <Text size={30} bold center>Cadastrar</Text>
             <ContentModal marginTop={40}>
-                {/* <TextIput 
-                label 
-                placeholder="Meu Nome Completo"
-                onChangeText={(data: any) => setName(data)}>Nome Completo
-                </TextIput> */}
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"

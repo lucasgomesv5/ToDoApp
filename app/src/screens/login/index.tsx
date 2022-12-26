@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Alert } from "react-native";
 import Button from "../../components/button/button-index";
 import { ButtonWrapper } from "../../components/button/button-style";
@@ -9,23 +9,21 @@ import TextIput from "../../components/text-input/text-input-index";
 import Text from "../../components/text/text-index";
 
 import firebase from '../../services/firebase/connection';
+import AuthContext from "../../contexts/auth";
 
 export default function Login(){
+    const {signed, signIn} = useContext(AuthContext)
     const navigation = useNavigation<any>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleLogin(){
-        const user = firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((user)=>{
-            console.log(user.user)
-        })
-        .catch((error)=>{
+    async function handleLogin(){
+        try{
+          signIn(email, password)
+        }catch(error){
             console.log(error)
-            Alert.alert('Deu ruim')
-            return;
-        })
-    }
+        };
+    };
 
     function handleRegisterScreen(){
         navigation.navigate('Register')
