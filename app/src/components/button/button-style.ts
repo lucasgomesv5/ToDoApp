@@ -20,5 +20,5 @@ export const StyledButtonText = styled.Text`
 `;
 
 export const ButtonWrapper = styled.View<ButtonWrapperProps>`
-    margin-top: ${({marginTop}) => marginTop};
+    margin-top: ${({marginTop}) => marginTop && marginTop};
 `;

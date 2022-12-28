@@ -3,7 +3,7 @@ import * as Styled from './content-modal-style';
 
 export interface ContentModalProps{
     children?: ReactNode;
-    marginTop?: number;
+    marginTop?: string;
 }
 
 export default function ContentModal(props: ContentModalProps){

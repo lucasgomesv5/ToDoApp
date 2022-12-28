@@ -9,7 +9,7 @@ export interface ButtonProps{
 }
 
 export interface ButtonWrapperProps{
-    marginTop?: number;
+    marginTop?: string;
 }
 
 export default function Button(props: ButtonProps){
