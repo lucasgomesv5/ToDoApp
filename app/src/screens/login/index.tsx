@@ -28,7 +28,7 @@ export default function Login(){
     }
     return(
         <Container>
-            <Text size={'30px'} bold center>Bem Vindo(a)</Text>
+            <Text marginTop size={'30px'} bold center>Bem Vindo(a)</Text>
             <ContentModal marginTop={'40px'}>
                 <TextIput 
                 label 
