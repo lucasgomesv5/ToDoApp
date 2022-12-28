@@ -31,8 +31,8 @@ export default function Register(){
 
     return(
         <Container>
-            <Text size={'30px'} bold center>Cadastrar</Text>
-            <ContentModal marginTop={40}>
+            <Text marginTop size={'30px'} bold center>Cadastrar</Text>
+            <ContentModal marginTop={'40px'}>
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"
@@ -43,12 +43,12 @@ export default function Register(){
                 password
                 placeholder="*********"
                 onChangeText={(data: any) => setPassword(data)}>Senha</TextIput>
-                <ButtonWrapper marginTop={20}>
+                <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary
                    onPress={handleRegister}>Criar conta</Button>
                 </ButtonWrapper>
-                <ButtonWrapper marginTop={3}>
+                <ButtonWrapper marginTop={'3px'}>
                    <Button 
                    transparent
                    onPress={handleBack}>Voltar</Button>
