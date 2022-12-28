@@ -29,7 +29,7 @@ export default function Login(){
     return(
         <Container>
             <Text size={'30px'} bold center>Bem Vindo(a)</Text>
-            <ContentModal marginTop={40}>
+            <ContentModal marginTop={'40px'}>
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"
@@ -40,12 +40,12 @@ export default function Login(){
                 password
                 placeholder="*********"
                 onChangeText={(data: any) => setPassword(data)}>Senha</TextIput>
-                <ButtonWrapper marginTop={20}>
+                <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary
                    onPress={handleLogin}>Entrar</Button>
                 </ButtonWrapper>
-                <ButtonWrapper marginTop={3}>
+                <ButtonWrapper marginTop={'3px'}>
                    <Button 
                    transparent
                    onPress={handleRegisterScreen}>Criar uma conta</Button>

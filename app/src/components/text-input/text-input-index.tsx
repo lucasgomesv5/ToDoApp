@@ -7,6 +7,7 @@ export interface TextInputProps{
     onChangeText?: (arg: any) => void;
     placeholder?: string;
     password?: boolean;
+    value?: any;
 }
 
 export default function TextIput(props: TextInputProps){
@@ -15,7 +16,7 @@ export default function TextIput(props: TextInputProps){
           {props.label &&(
             <Styled.StyledLabel>{props.children}</Styled.StyledLabel>
           )}
-            <Styled.StyledTextInput onChangeText={props.onChangeText} secureTextEntry={props.password} placeholder={props.placeholder}/>
+            <Styled.StyledTextInput value={props.value} onChangeText={props.onChangeText} secureTextEntry={props.password} placeholder={props.placeholder}/>
         </Styled.StyledContainer>
     )
 }

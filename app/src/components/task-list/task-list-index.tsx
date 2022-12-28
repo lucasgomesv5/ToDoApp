@@ -6,7 +6,7 @@ export default function TaskList({data, deleteTask, editTask}: any){
         <Styled.StyledWrapper>
             <Styled.StyledTask>{data.descricao}</Styled.StyledTask>
             <Styled.StyledEditButton
-              onPress={() => editTask(data.descricao)}>
+              onPress={() => editTask(data)}>
                 <Styled.StyledEditIcon name="edit" size={25}/>
             </Styled.StyledEditButton>
             <Styled.StyledTrashButton
