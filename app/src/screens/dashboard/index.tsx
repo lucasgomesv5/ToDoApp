@@ -1,5 +1,6 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
-import { FlatList, Keyboard, Modal } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import React, { useState, useContext, useEffect } from "react";
+import { FlatList, Keyboard } from "react-native";
 import AddTask from "../../components/add-task-container/add-task-container-index";
 import { Container } from "../../components/container/container";
 import ContentModal from "../../components/content-modal/content-modal-index";
@@ -17,7 +18,8 @@ export default function Dashboard(){
     const [editValue, setEditValue] = useState('');
     const [taskKey, setTaskKey] = useState('');
 
-    const {userId} = useContext(AuthContext);
+    const {userId, setUserId} = useContext(AuthContext);
+    const navigation = useNavigation();
 
     function handleAddTask(){
         if(newTask === ''){
@@ -64,7 +66,15 @@ export default function Dashboard(){
             setTasks([...taskClone])
         });
         setIsModalVisible(false);
-    }
+    };
+
+    async function exit(){
+      await setUserId(null);
+    };
+
+    useEffect(()=>{
+        console.log(userId, 'oi');
+    },[])
 
     useEffect(()=>{
         if(!userId){
@@ -87,7 +97,9 @@ export default function Dashboard(){
 
     return(
         <Container>
-            <DashboardHeader/>
+            <DashboardHeader
+              logout={exit}
+            />
             <ContentModal>
                 <AddTask 
                 onPress={handleAddTask}
