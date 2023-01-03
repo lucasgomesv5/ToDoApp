@@ -12,7 +12,7 @@ export const StyledText = styled.Text<TextProps>`
     ${({marginTop}) => marginTop && 'margin-top: 15px'}
     ${({mini}) => mini && css`
         color: ${colors.gray};
-        font-size: 13px;
+        font-size: 15px;
     `};
 `;
 
