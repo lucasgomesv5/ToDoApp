@@ -25,7 +25,7 @@ export default function Home(){
             <ContentModal>
                 <Text size={'25px'} bold>Organize suas tarefas de qualquer lugar</Text>
                 <Text mini marginTop>Faça login para começar</Text>
-                <ButtonWrapper marginTop={50}>
+                <ButtonWrapper marginTop={'50px'}>
                  <Button onPress={handleLoginScreen} primary>Acessar</Button>
                 </ButtonWrapper>
             </ContentModal>

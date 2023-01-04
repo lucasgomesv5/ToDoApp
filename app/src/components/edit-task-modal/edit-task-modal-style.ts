@@ -13,8 +13,10 @@ export const StyledContent = styled.View`
     height: 210px;
     border-radius: 8px;
     padding: 10px;
-    shadow-color: #000;
-    shadow-opacity: 2;
-    elevation: 20;
+    shadow-opacity: 5;
+    shadow-radius: 5px;
+    shadow-color: ${colors.gray};
+    shadow-offset: 0px 0px;
+    elevation: 10;
 
 `;

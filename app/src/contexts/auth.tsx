@@ -5,6 +5,8 @@ interface AuthContextData{
     signed?: boolean;
     signIn(email: string, passowrd: string): Promise<void>;
     userId?: any;
+    setUserId?: any;
+    setIsSigned?: any;
 };
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -19,7 +21,7 @@ export function AuthProvider({children}:any){
         setUserId(res.user?.uid);
     }
     return(
-        <AuthContext.Provider value={{signed: !!isSigned, signIn, userId}}>
+        <AuthContext.Provider value={{signed: !!isSigned, signIn, userId, setUserId, setIsSigned}}>
             {children}
         </AuthContext.Provider>
     )

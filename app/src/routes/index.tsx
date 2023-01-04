@@ -1,12 +1,9 @@
-import React, {useContext} from "react";
-import AuthContext from "../contexts/auth";
+import React from "react";
+import ProtectedRoute from "../hocs/protectedRoute";
 import AuthRoute from "./auth";
 
-import RegisterRoute from "./register";
-
 export default function Routes(){
-  const {signed} = useContext(AuthContext)
   return(
-    signed ? <AuthRoute/> : <RegisterRoute/>
-  )
-}
+    <AuthRoute/>
+  );
+};
