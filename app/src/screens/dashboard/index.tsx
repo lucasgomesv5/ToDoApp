@@ -18,8 +18,8 @@ export default function Dashboard(){
     const [editValue, setEditValue] = useState('');
     const [taskKey, setTaskKey] = useState('');
 
-    const {userId, setUserId} = useContext(AuthContext);
-    const navigation = useNavigation();
+    const {userId, setUserId, setIsSigned} = useContext(AuthContext);
+    const navigation = useNavigation<any>();
 
     function handleAddTask(){
         if(newTask === ''){
@@ -68,8 +68,9 @@ export default function Dashboard(){
         setIsModalVisible(false);
     };
 
-    async function exit(){
-      await setUserId(null);
+    function exit(){
+      setUserId(null);
+      setIsSigned(false);
     };
 
     useEffect(()=>{
