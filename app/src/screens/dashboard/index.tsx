@@ -11,6 +11,11 @@ import TaskList from "../../components/task-list/task-list-index";
 import AuthContext from "../../contexts/auth";
 import firebase from '../../services/firebase/connection';
 
+interface DataType{
+    key: string;
+    descricao: string;
+};
+
 export default function Dashboard(){
     const [tasks, setTasks] = useState<any[]>([]);
     const [newTask, setNewTask] = useState('');
@@ -19,13 +24,12 @@ export default function Dashboard(){
     const [taskKey, setTaskKey] = useState('');
 
     const {userId, setUserId, setIsSigned} = useContext(AuthContext);
-    const navigation = useNavigation<any>();
 
     function handleAddTask(){
         if(newTask === ''){
           return;
         };
-        const tasks = firebase.database().ref('tarefas').child(userId);
+        const tasks = firebase.database().ref('tarefas').child(userId as string);
         const key = tasks.push().key;
 
         tasks.child(key as string).set({
@@ -43,21 +47,21 @@ export default function Dashboard(){
     };
 
     function handleDelete(key: string){
-        firebase.database().ref('tarefas').child(userId).child(key).remove()
+        firebase.database().ref('tarefas').child(userId as string).child(key).remove()
         .then(()=>{
           const filterTaks = tasks.filter(item => item.key !== key);
           setTasks(filterTaks);
         })
     }
 
-    function handleEdit(data: any){
+    function handleEdit(data: DataType){
         setTaskKey(data.key)
         setIsModalVisible(true);
         setEditValue(data.descricao);
     }
 
     function handleEditModalButton(){
-        firebase.database().ref('tarefas').child(userId).child(taskKey).update({
+        firebase.database().ref('tarefas').child(userId as string).child(taskKey).update({
             descricao: editValue
         }).then(()=>{
             const taskIndex = tasks.findIndex((item) => item.key === taskKey);
@@ -74,15 +78,11 @@ export default function Dashboard(){
     };
 
     useEffect(()=>{
-        console.log(userId, 'oi');
-    },[])
-
-    useEffect(()=>{
         if(!userId){
           return;
         };
         function getUserData(){
-            firebase.database().ref('tarefas').child(userId).once('value', (snapshot)=>{
+            firebase.database().ref('tarefas').child(userId as string).once('value', (snapshot)=>{
                 setTasks([]);
                 snapshot?.forEach((childItem)=>{
                     const data = {

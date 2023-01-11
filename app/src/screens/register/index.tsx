@@ -10,8 +10,13 @@ import Text from "../../components/text/text-index";
 
 import firebase from '../../services/firebase/connection';
 
+type Nav = {
+    navigate: (value: string) => void;
+    goBack: () => void;
+}
+
 export default function Register(){
-    const navigation = useNavigation<any>();
+    const navigation = useNavigation<Nav>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -36,13 +41,13 @@ export default function Register(){
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"
-                onChangeText={(text: any) => setEmail(text)}>Email
+                onChangeText={(text: string) => setEmail(text)}>Email
                 </TextIput>
                 <TextIput 
                 label 
                 password
                 placeholder="*********"
-                onChangeText={(data: any) => setPassword(data)}>Senha</TextIput>
+                onChangeText={(data: string) => setPassword(data)}>Senha</TextIput>
                 <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary

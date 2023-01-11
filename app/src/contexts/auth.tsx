@@ -4,7 +4,7 @@ import firebase from '../services/firebase/connection';
 interface AuthContextData{
     signed?: boolean;
     signIn(email: string, passowrd: string): Promise<void>;
-    userId?: any;
+    userId?: string | null ;
     setUserId?: any;
     setIsSigned?: any;
 };
