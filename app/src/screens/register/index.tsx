@@ -36,7 +36,7 @@ export default function Register(){
 
     return(
         <Container>
-            <Text marginTop size={'30px'} bold center>Cadastrar</Text>
+            <Text marginTop size={'30px'} bold center>Create an account</Text>
             <ContentModal marginTop={'40px'}>
                 <TextIput 
                 label 
@@ -47,16 +47,16 @@ export default function Register(){
                 label 
                 password
                 placeholder="*********"
-                onChangeText={(data: string) => setPassword(data)}>Senha</TextIput>
+                onChangeText={(data: string) => setPassword(data)}>Password</TextIput>
                 <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary
-                   onPress={handleRegister}>Criar conta</Button>
+                   onPress={handleRegister}>Register</Button>
                 </ButtonWrapper>
                 <ButtonWrapper marginTop={'3px'}>
                    <Button 
                    transparent
-                   onPress={handleBack}>Voltar</Button>
+                   onPress={handleBack}>Go back</Button>
                 </ButtonWrapper>
                 
             </ContentModal>

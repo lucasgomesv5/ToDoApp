@@ -11,7 +11,7 @@ export default function DashboardHeader(props: DashboardHeaderProps){
     return(
         <Styled.StyledContainer>
             <Styled.StyledLogo source={require('../../assets/logo.png')}/>
-            <Text size={'26px'} white bold>Lista de tarefas</Text>
+            <Text size={'26px'} white bold>Tasks list</Text>
             <Logout onPress={props.logout}/>
         </Styled.StyledContainer>
     )
