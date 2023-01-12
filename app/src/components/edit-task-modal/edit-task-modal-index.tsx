@@ -7,7 +7,7 @@ import { Modal } from "react-native";
 
 interface EditTaskModalProps{
     value?: string;
-    onChangeText?: (arg: any) => void;
+    onChangeText?: (arg: string) => void;
     visible?: boolean;
     closeModal?: () => void;
     editTaskModal?: () => void;

@@ -2,9 +2,9 @@ import React from "react";
 import * as Styled from './add-task-container-style'
 
 interface AddTaskProps{
-    onChangeText?: (arg: any) => void;
+    onChangeText?: (arg: string) => void;
     onPress?: () => void;
-    value?: any;
+    value?: string;
 }
 
 export default function AddTask(props: AddTaskProps){

@@ -11,7 +11,7 @@ import TaskList from "../../components/task-list/task-list-index";
 import AuthContext from "../../contexts/auth";
 import firebase from '../../services/firebase/connection';
 
-interface DataType{
+export interface DataType{
     key: string;
     descricao: string;
 };
