@@ -4,10 +4,10 @@ import * as Styled from './text-input-style';
 export interface TextInputProps{
     children?: ReactNode;
     label?: boolean;
-    onChangeText?: (arg: any) => void;
+    onChangeText?: (arg: string) => void;
     placeholder?: string;
     password?: boolean;
-    value?: any;
+    value?: string;
 }
 
 export default function TextIput(props: TextInputProps){

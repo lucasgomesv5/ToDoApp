@@ -6,8 +6,8 @@ import TextIput from "../text-input/text-input-index";
 import { Modal } from "react-native";
 
 interface EditTaskModalProps{
-    value?: any;
-    onChangeText?: (arg: any) => void;
+    value?: string;
+    onChangeText?: (arg: string) => void;
     visible?: boolean;
     closeModal?: () => void;
     editTaskModal?: () => void;

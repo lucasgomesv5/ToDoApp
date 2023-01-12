@@ -9,9 +9,13 @@ import Text from "../../components/text/text-index";
 
 import AuthContext from "../../contexts/auth";
 
+type Nav = {
+    navigate: (value: string) => void;
+}
+
 export default function Login(){
     const {signed, signIn} = useContext(AuthContext)
-    const navigation = useNavigation<any>();
+    const navigation = useNavigation<Nav>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -33,13 +37,13 @@ export default function Login(){
                 <TextIput 
                 label 
                 placeholder="usuario@email.com"
-                onChangeText={(data: any) => setEmail(data)}>Email
+                onChangeText={(data: string) => setEmail(data)}>Email
                 </TextIput>
                 <TextIput 
                 label 
                 password
                 placeholder="*********"
-                onChangeText={(data: any) => setPassword(data)}>Senha</TextIput>
+                onChangeText={(data: string) => setPassword(data)}>Senha</TextIput>
                 <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary

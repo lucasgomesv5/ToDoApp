@@ -1,7 +1,14 @@
 import React from "react";
 import * as Styled from './task-list-style'
+import { DataType } from "../../screens/dashboard";
 
-export default function TaskList({data, deleteTask, editTask}: any){
+interface TaskListProps{
+  data: DataType;
+  deleteTask: (arg: string) => void;
+  editTask: (arg: DataType) => void;
+}
+
+export default function TaskList({data, deleteTask, editTask}: TaskListProps){
     return(
         <Styled.StyledWrapper>
             <Styled.StyledTask>{data.descricao}</Styled.StyledTask>
