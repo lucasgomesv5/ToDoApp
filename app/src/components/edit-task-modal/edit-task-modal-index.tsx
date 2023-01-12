@@ -22,15 +22,15 @@ export default function EditTaskModal(props: EditTaskModalProps){
             <Styled.StyledContent>
                 <TextIput
                   label
-                  placeholder="Digite aqui"
+                  placeholder="type here"
                   value={props.value}
-                  onChangeText={props.onChangeText}>Nova descrição da tarefa</TextIput>
+                  onChangeText={props.onChangeText}>New description</TextIput>
                   <ButtonWrapper marginTop={'30px'}>
                     <StyledButton onPress={props.editTaskModal} primary>
-                        <StyledButtonText>Editar</StyledButtonText>
+                        <StyledButtonText>Edit</StyledButtonText>
                     </StyledButton>
                     <StyledButton onPress={props.closeModal} transparent>
-                        <StyledButtonText>Cancelar</StyledButtonText>
+                        <StyledButtonText>Cancel</StyledButtonText>
                     </StyledButton>
                   </ButtonWrapper>
             </Styled.StyledContent>

@@ -32,27 +32,28 @@ export default function Login(){
     }
     return(
         <Container>
-            <Text marginTop size={'30px'} bold center>Bem Vindo(a)</Text>
+            <Text marginTop size={'30px'} bold center>Welcome!</Text>
             <ContentModal marginTop={'40px'}>
                 <TextIput 
                 label 
-                placeholder="usuario@email.com"
+                placeholder="user@email.com"
                 onChangeText={(data: string) => setEmail(data)}>Email
                 </TextIput>
                 <TextIput 
                 label 
                 password
                 placeholder="*********"
-                onChangeText={(data: string) => setPassword(data)}>Senha</TextIput>
+                onChangeText={(data: string) => setPassword(data)}>Password</TextIput>
                 <ButtonWrapper marginTop={'20px'}>
                    <Button 
                    primary
-                   onPress={handleLogin}>Entrar</Button>
+                   onPress={handleLogin}>Login</Button>
                 </ButtonWrapper>
                 <ButtonWrapper marginTop={'3px'}>
                    <Button 
                    transparent
-                   onPress={handleRegisterScreen}>Criar uma conta</Button>
+                   onPress={handleRegisterScreen}>Create an account
+                   </Button>
                 </ButtonWrapper>
                 
             </ContentModal>

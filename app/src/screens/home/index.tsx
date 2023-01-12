@@ -23,10 +23,10 @@ export default function Home(){
               <StyledLogo source={require('../../assets/logo.png')}/>
             </ContainerLogo>
             <ContentModal>
-                <Text size={'25px'} bold>Organize suas tarefas de qualquer lugar</Text>
-                <Text mini marginTop>Faça login para começar</Text>
+                <Text size={'25px'} bold>Organize yours tasks from anywhere </Text>
+                <Text mini marginTop>Login to get started</Text>
                 <ButtonWrapper marginTop={'50px'}>
-                 <Button onPress={handleLoginScreen} primary>Acessar</Button>
+                 <Button onPress={handleLoginScreen} primary>Access</Button>
                 </ButtonWrapper>
             </ContentModal>
         </Container>
