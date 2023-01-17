@@ -6,6 +6,7 @@ import { ContainerLogo, StyledLogo } from "../../components/container-logo/conta
 import { Container } from "../../components/container/container";
 import ContentModal from "../../components/content-modal/content-modal-index";
 import Text from "../../components/text/text-index";
+import ThemeIcon from "../../components/theme-icon/theme-icon-index";
 
 type Nav = {
   navigate: (value: string) => void
@@ -19,6 +20,7 @@ export default function Home(){
   }
     return (
         <Container>
+          <ThemeIcon/>
             <ContainerLogo>
               <StyledLogo source={require('../../assets/logo.png')}/>
             </ContainerLogo>

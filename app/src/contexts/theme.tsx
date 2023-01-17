@@ -18,7 +18,7 @@ export const ThemeContext = createContext({
 });
 
 export default function ThemeProvider({children}: ThemeProviderProps){
-    const [theme, setTheme] = useState(ThemeType.dark);
+    const [theme, setTheme] = useState(ThemeType.light);
     const themes = {
         dark: darkTheme,
         light: lightTheme,
