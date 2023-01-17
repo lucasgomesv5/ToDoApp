@@ -4,7 +4,7 @@ import firebase from '../services/firebase/connection';
 interface AuthContextData{
     children?: ReactNode
     signed?: boolean;
-    signIn(email: string, passowrd: string): Promise<void>;
+    signIn?: (email: string, passowrd: string) => Promise<void>;
     userId?: string | null ;
     setUserId?: any;
     setIsSigned?: any;

@@ -14,14 +14,16 @@ type Nav = {
 }
 
 export default function Login(){
-    const {signed, signIn} = useContext(AuthContext)
+    const {signIn} = useContext(AuthContext)
     const navigation = useNavigation<Nav>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     async function handleLogin(){
         try{
-          signIn(email, password);
+          if(signIn !== undefined){
+            signIn(email, password);
+          }
         }catch(error){
             console.log(error)
         };

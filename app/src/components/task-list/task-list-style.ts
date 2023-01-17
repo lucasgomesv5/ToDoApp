@@ -1,10 +1,9 @@
-import { colors } from "../../theme";
 import styled from "styled-components/native";
 import Feather from 'react-native-vector-icons/Feather';
 
 export const StyledWrapper = styled.View`
     flex-direction: row;
-    background-color: ${colors.backgroundCard};
+    background-color: ${props => props.theme.colors.backgroundCard};
     margin-bottom: 25px;
     border-radius: 5px;
     align-items: center;
@@ -13,7 +12,7 @@ export const StyledWrapper = styled.View`
 
 export const StyledTask = styled.Text`
     font-size: 17px;
-    color: ${colors.text};
+    color: ${props => props.theme.colors.text};
     width: 70%;
     flex-wrap: wrap;
 `;
@@ -24,7 +23,7 @@ export const StyledTrashButton = styled.TouchableOpacity`
 `;
 
 export const StyledTrashIcon = styled(Feather)`
-    color: ${colors.red};
+    color: ${props => props.theme.colors.red};
 `;
 
 export const StyledEditButton = styled.TouchableOpacity`
@@ -33,5 +32,5 @@ export const StyledEditButton = styled.TouchableOpacity`
 `;
 
 export const StyledEditIcon = styled(Feather)`
-    color: ${colors.text};
+    color: ${props => props.theme.colors.text};
 `;

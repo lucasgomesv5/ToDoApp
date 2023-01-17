@@ -1,7 +1,6 @@
 import React from "react";
 import { ButtonWrapper, StyledButton, StyledButtonText } from "../button/button-style";
 import * as Styled from './edit-task-modal-style';
-import Text from '../text/text-index';
 import TextIput from "../text-input/text-input-index";
 import { Modal } from "react-native";
 

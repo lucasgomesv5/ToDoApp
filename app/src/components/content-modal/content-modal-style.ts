@@ -1,4 +1,3 @@
-import { colors } from "../../theme";
 import styled, { css } from "styled-components/native";
 import Animated, {
   Easing,
@@ -17,9 +16,9 @@ export const StyledContentModal = styled(Animated.View).attrs(
     entering: FadeInDown.delay(10).duration(850).easing(Easing.inOut(Easing.ease))
   })
 )<ContentModalProps>`
-    background-color: ${colors.background};
+    background-color: ${props => props.theme.colors.background};
     padding: 10px;
-    color: ${colors.text};
+    color: ${props => props.theme.colors.text};
     flex: 1;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
