@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { colors } from "../../theme";
 
 export const StyledTouchable = styled.TouchableOpacity`
     margin-left: 33%;
@@ -8,5 +7,5 @@ export const StyledTouchable = styled.TouchableOpacity`
 `;
 
 export const StyledLogoutIcon = styled(MaterialIcons)`
-    color: ${colors.white};
+    color: ${props => props.theme.colors.white};
 `;
