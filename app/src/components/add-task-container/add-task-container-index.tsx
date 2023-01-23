@@ -11,7 +11,7 @@ export default function AddTask(props: AddTaskProps){
     return(
         <Styled.StyledContainer>
             <Styled.StyledInput
-            placeholder="Cadastre uma nova tarefa"
+            placeholder="Register a new task"
             onChangeText={props.onChangeText}
             value={props.value}
             />
