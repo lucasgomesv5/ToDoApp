@@ -6,7 +6,7 @@ export const StyledText = styled.Text<TextProps>`
     font-size: ${({size}) => size};
     font-weight: ${({bold}) => bold ? 'bold' : 'normal'};
 
-    ${({white}) => white && `color: ${props => props.theme.colors.white}`}
+    ${({white}) => white && css`color: ${props=> props.theme.colors.white}`}
     ${({center}) => center && 'align-self: center'}
     ${({marginTop}) => marginTop && 'margin-top: 15px'}
     ${({mini}) => mini && css`
